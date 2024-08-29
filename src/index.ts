@@ -7,6 +7,7 @@ dotenv.config()
 import adminRoute from './router/adminRoute'
 import productRoute from './router/productRoute'
 import categoryRoute from './router/categoryRoute'
+import subCategoryRoute from './router/subCategoryRoute'
 
 const app = express()
 const port = 4000
@@ -17,7 +18,7 @@ app.use(cookieParser())
 app.use('/api/admin',adminRoute)
 app.use('/api',productRoute)
 app.use('/api',categoryRoute)
-
+app.use('/api',subCategoryRoute)
 
 app.listen(port,()=>{
     console.log(`server running on http://localhost:${port}`);
